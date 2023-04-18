@@ -9,15 +9,9 @@
       "@components": [
         "./components"
       ],
-      // "@components/*": [
-      //   "./components/*"
-      // ],
       "@helpers": [
         "./helpers"
       ],
-      // "@screens/*": [
-      //   "./screens/*"
-      // ],
       "@routing": [
         "./routing"
       ],
