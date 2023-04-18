@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`productListItem should render a redemtion item 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        },
+      ]
+    }
+    testID="product-item"
+  >
+    <View
+      style={
+        [
+          {
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 0.85,
+            "flexShrink": 1,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          {
+            "uri": "AN.URL",
+          }
+        }
+        style={
+          [
+            {
+              "borderRadius": 10,
+              "height": 55,
+              "width": 55,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flexDirection": "column",
+              "justifyContent": "space-evenly",
+              "marginLeft": 11,
+            },
+          ]
+        }
+      >
+        <Text
+          isProductName={true}
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": "800",
+                "lineHeight": 19.12,
+              },
+            ]
+          }
+        >
+          A.NAME
+        </Text>
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "lineHeight": 16.39,
+              },
+            ]
+          }
+        >
+          A.DATE
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        [
+          {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        isRedemption={true}
+        style={
+          [
+            {
+              "color": "#FF0000",
+              "fontSize": 16,
+              "fontWeight": "800",
+              "lineHeight": 21.86,
+              "marginRight": 2,
+            },
+          ]
+        }
+        testID="product-item-sign"
+      >
+        -
+      </Text>
+      <Text
+        isProductName={false}
+        style={
+          [
+            {
+              "color": "#000000",
+              "fontSize": 16,
+              "fontWeight": "800",
+              "lineHeight": 21.86,
+            },
+          ]
+        }
+      >
+        100
+      </Text>
+    </View>
+    <Image
+      resizeMode="cover"
+      source={
+        {
+          "testUri": "../../../assets/images/home/ChevronRight.png",
+        }
+      }
+      style={
+        [
+          {
+            "height": 10,
+            "width": 10,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`productListItem should return a snapshot of the component 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        },
+      ]
+    }
+    testID="product-item"
+  >
+    <View
+      style={
+        [
+          {
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 0.85,
+            "flexShrink": 1,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          {
+            "uri": "AN.URL",
+          }
+        }
+        style={
+          [
+            {
+              "borderRadius": 10,
+              "height": 55,
+              "width": 55,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flexDirection": "column",
+              "justifyContent": "space-evenly",
+              "marginLeft": 11,
+            },
+          ]
+        }
+      >
+        <Text
+          isProductName={true}
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": "800",
+                "lineHeight": 19.12,
+              },
+            ]
+          }
+        >
+          A.NAME
+        </Text>
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "lineHeight": 16.39,
+              },
+            ]
+          }
+        >
+          A.DATE
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        [
+          {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        isRedemption={false}
+        style={
+          [
+            {
+              "color": "#00B833",
+              "fontSize": 16,
+              "fontWeight": "800",
+              "lineHeight": 21.86,
+              "marginRight": 2,
+            },
+          ]
+        }
+        testID="product-item-sign"
+      >
+        +
+      </Text>
+      <Text
+        isProductName={false}
+        style={
+          [
+            {
+              "color": "#000000",
+              "fontSize": 16,
+              "fontWeight": "800",
+              "lineHeight": 21.86,
+            },
+          ]
+        }
+      >
+        100
+      </Text>
+    </View>
+    <Image
+      resizeMode="cover"
+      source={
+        {
+          "testUri": "../../../assets/images/home/ChevronRight.png",
+        }
+      }
+      style={
+        [
+          {
+            "height": 10,
+            "width": 10,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

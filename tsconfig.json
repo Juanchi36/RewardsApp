@@ -18,6 +18,12 @@
       "@screens": [
         "./screens"
       ],
+      "@assets": [
+        "../assets"
+      ],
+      "@assets/*": [
+        "../assets/*"
+      ],
     },
   },
 }
