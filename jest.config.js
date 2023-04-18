@@ -1,6 +1,6 @@
 module.exports = {
   preset: './jest/jest.preset.js',
-  transformIgnorePatterns: ['/node_modules/(?!native-base)/'],
+  transformIgnorePatterns: ['/node_modules/(?!native-base)/', 'jest-runner'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   coverageThreshold: {
     global: {
