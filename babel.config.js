@@ -10,6 +10,7 @@ module.exports = {
           '@helpers': './src/helpers',
           '@routing': './src/routing',
           '@screens': './src/screens',
+          '@assets': './assets',
         },
       },
     ],
