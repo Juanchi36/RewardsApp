@@ -15,6 +15,9 @@
       "@routing": [
         "./routing"
       ],
+      "@routing/*": [
+        "./routing/*"
+      ],
       "@screens": [
         "./screens"
       ],

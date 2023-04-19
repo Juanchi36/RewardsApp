@@ -8,7 +8,7 @@ describe('button', () => {
   });
 
   it('should return a snapshot of the component', () => {
-    const result = render(<Button title="A.TITLE" />);
+    const result = render(<Button title="A.TITLE" handlePress={() => jest.fn()} />);
 
     const button = result.getByTestId('primary-button');
 
@@ -17,11 +17,11 @@ describe('button', () => {
   });
 
   it('should return a blue button', () => {
-    const result = render(<Button title="A.TITLE" />);
+    const result = render(<Button title="A.TITLE" isASingleButton={true} />);
 
     const button = result.getByTestId('primary-button');
 
-    expect(button.props.style[0].backgroundColor).toBe('#334ffa');
+    expect(button.props.style.backgroundColor).toBe('#334ffa');
     expect(result.toJSON()).toMatchSnapshot();
   });
 });

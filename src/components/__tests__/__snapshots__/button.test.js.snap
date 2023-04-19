@@ -31,39 +31,31 @@ exports[`button should return a blue button 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     {
+      "alignItems": "center",
+      "backgroundColor": "#334ffa",
+      "borderRadius": 10,
+      "height": 50,
+      "justifyContent": "center",
       "opacity": 1,
+      "width": "100%",
     }
   }
+  testID="primary-button"
 >
-  <View
+  <Text
     style={
       [
         {
-          "alignItems": "center",
-          "backgroundColor": "#334ffa",
-          "borderRadius": 10,
-          "height": 50,
-          "justifyContent": "center",
+          "color": "#ffffff",
+          "fontSize": 12,
+          "fontWeight": "800",
+          "lineHeight": 16.39,
         },
       ]
     }
-    testID="primary-button"
   >
-    <Text
-      style={
-        [
-          {
-            "color": "#ffffff",
-            "fontSize": 16,
-            "fontWeight": "800",
-            "lineHeight": 21.86,
-          },
-        ]
-      }
-    >
-      A.TITLE
-    </Text>
-  </View>
+    A.TITLE
+  </Text>
 </View>
 `;
 
@@ -88,7 +80,7 @@ exports[`button should return a snapshot of the component 1`] = `
   }
   accessible={true}
   collapsable={false}
-  focusable={false}
+  focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -98,38 +90,30 @@ exports[`button should return a snapshot of the component 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     {
+      "alignItems": "center",
+      "backgroundColor": "#334ffa",
+      "borderRadius": 10,
+      "height": 50,
+      "justifyContent": "center",
       "opacity": 1,
+      "width": "48%",
     }
   }
+  testID="primary-button"
 >
-  <View
+  <Text
     style={
       [
         {
-          "alignItems": "center",
-          "backgroundColor": "#334ffa",
-          "borderRadius": 10,
-          "height": 50,
-          "justifyContent": "center",
+          "color": "#ffffff",
+          "fontSize": 12,
+          "fontWeight": "800",
+          "lineHeight": 16.39,
         },
       ]
     }
-    testID="primary-button"
   >
-    <Text
-      style={
-        [
-          {
-            "color": "#ffffff",
-            "fontSize": 16,
-            "fontWeight": "800",
-            "lineHeight": 21.86,
-          },
-        ]
-      }
-    >
-      A.TITLE
-    </Text>
-  </View>
+    A.TITLE
+  </Text>
 </View>
 `;
