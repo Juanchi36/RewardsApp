@@ -11,6 +11,7 @@ import styled from 'styled-components/native';
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;
+  background-color: #f6f6f6;
 `;
 
 /**
@@ -27,7 +28,7 @@ export const MainStack: FunctionComponent = () => (
   <SafeArea>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name="ProductDetail" component={ProductDetail} />
       </Stack.Navigator>
     </NavigationContainer>
