@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pointsSummary should return a snapshot of the component 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#334ffa",
+        "borderRadius": 20,
+        "elevation": 1,
+        "height": 143,
+        "justifyContent": "center",
+        "shadowOffset": {
+          "height": 4,
+          "width": 0,
+        },
+        "shadowOpacity": 0.5,
+        "shadowRadius": 20,
+      },
+    ]
+  }
+  testID="points-summaty-container"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#ffffff",
+          "fontSize": 16,
+          "fontWeight": "800",
+          "left": 18,
+          "lineHeight": 21.86,
+          "position": "absolute",
+          "top": 21,
+        },
+      ]
+    }
+  >
+    Diciembre
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#ffffff",
+          "fontSize": 32,
+          "fontWeight": "800",
+          "lineHeight": 43.71,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    10,000.00 pts
+  </Text>
+</View>
+`;
