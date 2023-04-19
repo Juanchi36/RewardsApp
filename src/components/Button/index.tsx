@@ -26,10 +26,11 @@ const ButtonWrapper = styled.TouchableOpacity<{ isASingleButton: boolean }>`
 `;
 
 const ButtonText = styled.Text`
+  font-family: Avenir-Medium;
   color: #ffffff;
   font-weight: 800;
-  font-size: 12px;
-  line-height: 16.39px;
+  font-size: 16px;
+  line-height: 17.39px;
 `;
 
 export const Button: FunctionComponent<ButtonProps> = ({ title, isASingleButton, handlePress }) => (

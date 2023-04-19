@@ -21,6 +21,9 @@ const FooterWrapper = styled.View`
   width: 100%;
   justify-content: space-between;
   padding-horizontal: 20px;
+  position: absolute;
+  bottom: 4%;
+  left: 0%;
 `;
 
 export const Footer: FunctionComponent<FooterProps> = ({ listStatus, setListStatus }) => {

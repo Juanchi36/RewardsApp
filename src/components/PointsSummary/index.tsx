@@ -27,6 +27,7 @@ const SummaryWrapper = styled.View`
 `;
 
 const MonthText = styled.Text`
+  font-family: Avenir-Medium;
   color: #ffffff;
   font-weight: 800;
   font-size: 16px;
@@ -37,6 +38,7 @@ const MonthText = styled.Text`
 `;
 
 const AmountText = styled.Text`
+  font-family: Avenir-Medium;
   color: #ffffff;
   font-weight: 800;
   font-size: 32px;

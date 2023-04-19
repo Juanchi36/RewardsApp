@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ProductDetailScreenParams, StackParamList } from '@routing/types';
 import { ProductListItem } from '@components';
-import { formatDate } from '@helpers';
+import { formatDate, isSmallDevice } from '@helpers';
 import styled, { DefaultTheme } from 'styled-components/native';
 import { StyledComponent } from 'styled-components';
 
@@ -31,16 +31,18 @@ const BodyWrapper = styled.View`
   padding-vertical: 20px;
 `;
 
-const ListWrapper = styled.View`
+const ListWrapper = styled.View<{ smallDevice: boolean }>`
   margin-top: 20px;
   padding-vertical: 20px;
   padding-horizontal: 15px;
   background-color: #fff;
-  max-height: 86%;
+  max-height: 77%;
   border-radius: 10px;
+  max-height: ${({ smallDevice }) => (smallDevice ? '65%' : '77%')};
 `;
 
 const SubtitleText = styled.Text`
+  font-family: Avenir-Medium;
   color: #9b9898;
   font-weight: 800;
   font-size: 14px;
@@ -53,7 +55,7 @@ export const Body: FunctionComponent<BodyProps> = ({ products, separator, loadin
   return (
     <BodyWrapper>
       <SubtitleText>TUS MOVIMIENTOS</SubtitleText>
-      <ListWrapper>
+      <ListWrapper smallDevice={isSmallDevice}>
         {!loading && (
           <FlatList
             keyExtractor={(item, index) => `${item?.id}_${index}`}

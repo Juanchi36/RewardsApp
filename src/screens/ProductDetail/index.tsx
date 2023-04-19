@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { StackScreenProps, StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { StackParamList } from '@routing/types';
-import { formatDate } from '@helpers';
+import { formatDate, isSmallDevice } from '@helpers';
 import { Button } from '@components';
 import styled from 'styled-components/native';
 
@@ -16,7 +16,7 @@ type ProductDetailScreenProps = StackScreenProps<StackParamList, 'ProductDetail'
  * Styled components
  */
 
-const ProductDetailWrapper = styled.SafeAreaView`
+const HeaderWrapper = styled.SafeAreaView`
   background-color: #cfd6ff;
   height: 150px;
 `;
@@ -26,16 +26,18 @@ const ContentWrapper = styled.View`
 `;
 
 const TitleText = styled.Text`
-  margin-top: 62px;
+  font-family: Avenir-Medium;
   color: #000000;
   font-weight: 800;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 26px;
+  position: absolute;
+  left: 20px;
+  top: 110px;
 `;
 
-const ImageCard = styled.View`
-  margin-vertical: 32px
-  height: 350px;
+const ImageCard = styled.View<{ smallDevice: boolean }>`
+  margin-vertical: 19px
   background-color: #ffffff;
   border-radius: 10px;
   shadow-opacity: 0.5;
@@ -44,9 +46,11 @@ const ImageCard = styled.View`
   elevation: 1;
   justify-content: center;
   align-items: center;
+  height: ${({ smallDevice }) => (smallDevice ? '200px' : '350px')};
 `;
 
 const SubtitleText = styled.Text`
+  font-family: Avenir-Medium;
   color: #9b9898;
   font-weight: 800;
   font-size: 14px;
@@ -55,6 +59,7 @@ const SubtitleText = styled.Text`
 `;
 
 const InfoText = styled.Text`
+  font-family: Avenir-Medium;
   color: #000000;
   font-weight: 800;
   font-size: 16px;
@@ -63,6 +68,7 @@ const InfoText = styled.Text`
 `;
 
 const PointsText = styled.Text`
+  font-family: Avenir-Medium;
   color: #000000;
   font-weight: 800;
   font-size: 24px;
@@ -74,7 +80,7 @@ const FooterWrapper = styled.View`
   padding-horizontal: 20px;
   width: 100%;
   position: absolute;
-  bottom: 5%;
+  bottom: 4.5%;
   left: 0%;
 `;
 
@@ -100,19 +106,19 @@ export const ProductDetail: FunctionComponent<ProductDetailScreenProps> = ({
 
   return (
     <>
-      <ProductDetailWrapper>
-        <ContentWrapper>
-          <TitleText>{product}</TitleText>
-          <ImageCard>
-            {loading && <Loader />}
-            <Image resizeMode="cover" source={{ uri: image }} onLoad={() => setLoading(false)} />
-          </ImageCard>
-          <SubtitleText>Detalles del producto:</SubtitleText>
-          <InfoText>{`Comprado el ${formatDate(createdAt)}`}</InfoText>
-          <SubtitleText>Con esta compra acumulaste:</SubtitleText>
-          <PointsText>{`${points} puntos`}</PointsText>
-        </ContentWrapper>
-      </ProductDetailWrapper>
+      <HeaderWrapper>
+        <TitleText>{product}</TitleText>
+      </HeaderWrapper>
+      <ContentWrapper>
+        <ImageCard smallDevice={isSmallDevice}>
+          {loading && <Loader />}
+          <Image resizeMode="cover" source={{ uri: image }} onLoad={() => setLoading(false)} />
+        </ImageCard>
+        <SubtitleText>Detalles del producto:</SubtitleText>
+        <InfoText>{`Comprado el ${formatDate(createdAt)}`}</InfoText>
+        <SubtitleText>Con esta compra acumulaste:</SubtitleText>
+        <PointsText>{`${points} puntos`}</PointsText>
+      </ContentWrapper>
       <FooterWrapper>
         <Button
           title="Aceptar"
