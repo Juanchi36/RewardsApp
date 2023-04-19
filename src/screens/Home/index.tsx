@@ -1,4 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
+import { StackScreenProps } from '@react-navigation/stack';
+import { StackParamList } from '@routing/types';
 import { Header, Body, Footer } from './components';
 import { filterProductsByRedemption } from '@helpers';
 import styled from 'styled-components/native';
@@ -6,6 +8,8 @@ import styled from 'styled-components/native';
 /**
  * Types
  */
+
+type HomeScreenProps = StackScreenProps<StackParamList, 'Home'>;
 
 export enum ListStatus {
   ALL = 'ALL',
@@ -106,7 +110,7 @@ export const productsMock = [
  * Styled components
  */
 
-const HomeWrapper = styled.View`
+const HomeWrapper = styled.SafeAreaView`
   flex: 1;
   background-color: #f6f6f6;
 `;
@@ -115,8 +119,8 @@ const Separator = styled.View`
   height: 8px;
 `;
 
-export const Home: FunctionComponent = () => {
-  const [listStatus, setListStatus] = useState<ListStatus>(ListStatus.REDEEMED);
+export const Home: FunctionComponent<HomeScreenProps> = () => {
+  const [listStatus, setListStatus] = useState<ListStatus>(ListStatus.ALL);
 
   const products =
     listStatus === ListStatus.WON

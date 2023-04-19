@@ -1,10 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { FlatList, View } from 'react-native';
-import { ProductDetailScreenParams } from '@routing/types';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ProductDetailScreenParams, StackParamList } from '@routing/types';
 import { ProductListItem } from '@components';
+import { formatDate } from '@helpers';
 import styled, { DefaultTheme } from 'styled-components/native';
 import { StyledComponent } from 'styled-components';
-import { formatDate } from '@helpers';
 
 /**
  * Types
@@ -44,28 +46,40 @@ const SubtitleText = styled.Text`
   line-height: 19.12px;
 `;
 
-export const Body: FunctionComponent<BodyProps> = ({ products, separator }) => (
-  <BodyWrapper>
-    <SubtitleText>TUS MOVIMIENTOS</SubtitleText>
-    <ListWrapper>
-      <FlatList
-        keyExtractor={(item, index) => `${item?.id}_${index}`}
-        showsVerticalScrollIndicator={false}
-        bounces={false}
-        data={products}
-        renderItem={({ item }) => (
-          <ProductListItem
-            productName={item.product}
-            date={formatDate(item.createdAt)}
-            imageUrl={item.image}
-            points={item.points}
-            isRedemption={item.is_redemption}
-            // TODO: the management of the press will be implemented in a future PR
-            handlePress={() => {}}
-          />
-        )}
-        ItemSeparatorComponent={separator}
-      />
-    </ListWrapper>
-  </BodyWrapper>
-);
+export const Body: FunctionComponent<BodyProps> = ({ products, separator }) => {
+  const { navigate } = useNavigation<StackNavigationProp<StackParamList>>();
+
+  return (
+    <BodyWrapper>
+      <SubtitleText>TUS MOVIMIENTOS</SubtitleText>
+      <ListWrapper>
+        <FlatList
+          keyExtractor={(item, index) => `${item?.id}_${index}`}
+          showsVerticalScrollIndicator={false}
+          bounces={false}
+          data={products}
+          renderItem={({ item }) => (
+            <ProductListItem
+              productName={item.product}
+              date={formatDate(item.createdAt)}
+              imageUrl={item.image}
+              points={item.points}
+              isRedemption={item.is_redemption}
+              handlePress={() => {
+                navigate('ProductDetail', {
+                  id: item.id,
+                  createdAt: item.createdAt,
+                  product: item.product,
+                  points: item.points,
+                  is_redemption: item.is_redemption,
+                  image: item.image,
+                });
+              }}
+            />
+          )}
+          ItemSeparatorComponent={separator}
+        />
+      </ListWrapper>
+    </BodyWrapper>
+  );
+};
