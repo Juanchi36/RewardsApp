@@ -1,10 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { PointsSummary } from '@components';
-import { updatePoints } from '@helpers';
 import styled from 'styled-components/native';
-
-// TODO: Remove import below
-import { productsMock } from '@screens';
 
 /**
  * Types
@@ -13,6 +9,7 @@ import { productsMock } from '@screens';
 interface HeaderWrapperProps {
   title: string;
   userName: string;
+  ammount: number;
 }
 
 /**
@@ -50,14 +47,13 @@ const SubtitleText = styled.Text`
   line-height: 19.12px;
 `;
 
-export const Header: FunctionComponent<HeaderWrapperProps> = ({ title, userName }) => (
+export const Header: FunctionComponent<HeaderWrapperProps> = ({ title, userName, ammount }) => (
   <HeaderWrapper>
     <TitleText>{title}</TitleText>
     <UserNameText>{userName}</UserNameText>
     <SubtitleText>TUS PUNTOS</SubtitleText>
     <PointsSummaryWrapper>
-      {/* TODO: the list of actual products will come from the service that calls the API */}
-      <PointsSummary ammount={updatePoints(productsMock)} month="Diciembre" />
+      <PointsSummary ammount={ammount} month="Diciembre" />
     </PointsSummaryWrapper>
   </HeaderWrapper>
 );

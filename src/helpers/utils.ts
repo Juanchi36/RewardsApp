@@ -12,13 +12,15 @@ export const formatDate = (dateString: string): string => {
 };
 
 export const updatePoints = (products: ProductDetailScreenParams[]): number => {
-  const pointsToAdd = products.reduce((sum, item) => {
-    if (item.is_redemption === false) {
-      return sum + item.points;
-    } else {
-      return sum - item.points;
-    }
-  }, 0);
+  const pointsToAdd =
+    products &&
+    products.reduce((sum, item) => {
+      if (item.is_redemption === false) {
+        return sum + item.points;
+      } else {
+        return sum - item.points;
+      }
+    }, 0);
 
   return pointsToAdd;
 };

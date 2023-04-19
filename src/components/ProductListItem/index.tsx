@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Images } from '@helpers';
 import styled from 'styled-components/native';
@@ -76,32 +76,27 @@ const DateText = styled.Text`
   line-height: 16.39px;
 `;
 
-export const ProductListItem: FunctionComponent<ProductListItemProps> = ({
-  productName,
-  date,
-  imageUrl,
-  points,
-  isRedemption,
-  handlePress,
-}) => (
-  <TouchableOpacity onPress={handlePress}>
-    <ItemWrapper testID="product-item">
-      <ProductWrapper>
-        <ThumbnailImage resizeMode="cover" source={{ uri: imageUrl }} />
-        <InfoWrapper>
-          <BoldText isProductName={true} numberOfLines={1}>
-            {productName}
-          </BoldText>
-          <DateText>{date}</DateText>
-        </InfoWrapper>
-      </ProductWrapper>
-      <PointsWrapper>
-        <Sign isRedemption={isRedemption} testID="product-item-sign">
-          {isRedemption ? '-' : '+'}
-        </Sign>
-        <BoldText isProductName={false}>{points}</BoldText>
-      </PointsWrapper>
-      <ChevronRight resizeMode="cover" source={Images.ProductDetail.ChevronRight} />
-    </ItemWrapper>
-  </TouchableOpacity>
+export const ProductListItem: FunctionComponent<ProductListItemProps> = memo(
+  ({ productName, date, imageUrl, points, isRedemption, handlePress }) => (
+    <TouchableOpacity onPress={handlePress}>
+      <ItemWrapper testID="product-item">
+        <ProductWrapper>
+          <ThumbnailImage resizeMode="cover" source={{ uri: imageUrl }} />
+          <InfoWrapper>
+            <BoldText isProductName={true} numberOfLines={1}>
+              {productName}
+            </BoldText>
+            <DateText>{date}</DateText>
+          </InfoWrapper>
+        </ProductWrapper>
+        <PointsWrapper>
+          <Sign isRedemption={isRedemption} testID="product-item-sign">
+            {isRedemption ? '-' : '+'}
+          </Sign>
+          <BoldText isProductName={false}>{points}</BoldText>
+        </PointsWrapper>
+        <ChevronRight resizeMode="cover" source={Images.ProductDetail.ChevronRight} />
+      </ItemWrapper>
+    </TouchableOpacity>
+  )
 );
