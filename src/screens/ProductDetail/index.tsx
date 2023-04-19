@@ -26,7 +26,7 @@ const ContentWrapper = styled.View`
 `;
 
 const TitleText = styled.Text`
-  margin-top: 60px;
+  margin-top: 62px;
   color: #000000;
   font-weight: 800;
   font-size: 24px;
