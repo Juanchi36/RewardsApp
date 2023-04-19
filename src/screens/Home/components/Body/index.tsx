@@ -18,6 +18,7 @@ interface BodyProps {
     'product' | 'createdAt' | 'points' | 'is_redemption' | 'id' | 'image'
   >[];
   separator: StyledComponent<typeof View, DefaultTheme, {}, never>;
+  loading: boolean;
 }
 
 /**
@@ -46,39 +47,42 @@ const SubtitleText = styled.Text`
   line-height: 19.12px;
 `;
 
-export const Body: FunctionComponent<BodyProps> = ({ products, separator }) => {
+export const Body: FunctionComponent<BodyProps> = ({ products, separator, loading }) => {
   const { navigate } = useNavigation<StackNavigationProp<StackParamList>>();
 
   return (
     <BodyWrapper>
       <SubtitleText>TUS MOVIMIENTOS</SubtitleText>
       <ListWrapper>
-        <FlatList
-          keyExtractor={(item, index) => `${item?.id}_${index}`}
-          showsVerticalScrollIndicator={false}
-          bounces={false}
-          data={products}
-          renderItem={({ item }) => (
-            <ProductListItem
-              productName={item.product}
-              date={formatDate(item.createdAt)}
-              imageUrl={item.image}
-              points={item.points}
-              isRedemption={item.is_redemption}
-              handlePress={() => {
-                navigate('ProductDetail', {
-                  id: item.id,
-                  createdAt: item.createdAt,
-                  product: item.product,
-                  points: item.points,
-                  is_redemption: item.is_redemption,
-                  image: item.image,
-                });
-              }}
-            />
-          )}
-          ItemSeparatorComponent={separator}
-        />
+        {!loading && (
+          <FlatList
+            keyExtractor={(item, index) => `${item?.id}_${index}`}
+            showsVerticalScrollIndicator={false}
+            bounces={false}
+            data={products}
+            renderItem={({ item }) => (
+              <ProductListItem
+                productName={item.product}
+                date={formatDate(item.createdAt)}
+                imageUrl={item.image}
+                points={item.points}
+                isRedemption={item.is_redemption}
+                handlePress={() => {
+                  navigate('ProductDetail', {
+                    id: item.id,
+                    createdAt: item.createdAt,
+                    product: item.product,
+                    points: item.points,
+                    is_redemption: item.is_redemption,
+                    image: item.image,
+                  });
+                }}
+              />
+            )}
+            ItemSeparatorComponent={separator}
+            initialNumToRender={2}
+          />
+        )}
       </ListWrapper>
     </BodyWrapper>
   );

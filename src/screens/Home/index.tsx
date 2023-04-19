@@ -1,8 +1,9 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { StackScreenProps } from '@react-navigation/stack';
-import { StackParamList } from '@routing/types';
+import { ProductDetailScreenParams, StackParamList } from '@routing/types';
 import { Header, Body, Footer } from './components';
-import { filterProductsByRedemption } from '@helpers';
+import { filterProductsByRedemption, updatePoints } from '@helpers';
+import { ProductService } from '../../services/productService';
 import styled from 'styled-components/native';
 
 /**
@@ -22,87 +23,15 @@ export enum ListStatus {
  */
 
 const USER_NAME = 'Ruben Rodriguez';
-// TODO: remove the following mock when implementing the API call
-export const productsMock = [
+const productService = ProductService();
+const initialState = [
   {
-    createdAt: '2022-12-09T06:34:25.607Z',
-    product: 'Handmade Metal Shoes',
-    points: 16434,
-    image: 'https://loremflickr.com/640/480/technics',
+    createdAt: '',
+    product: '',
+    points: 0,
+    image: 'https://picsum.photos/200/300',
     is_redemption: false,
-    id: '1',
-  },
-  {
-    createdAt: '2022-12-09T17:02:51.904Z',
-    product: 'Recycled Plastic Tuna',
-    points: 92984,
-    image: 'https://loremflickr.com/640/480/city',
-    is_redemption: true,
-    id: '2',
-  },
-  {
-    createdAt: '2022-12-09T06:34:25.607Z',
-    product: 'Handmade Metal Shoes',
-    points: 16434,
-    image: 'https://loremflickr.com/640/480/technics',
-    is_redemption: false,
-    id: '1',
-  },
-  {
-    createdAt: '2022-12-09T17:02:51.904Z',
-    product: 'Recycled Plastic Tuna',
-    points: 92984,
-    image: 'https://loremflickr.com/640/480/city',
-    is_redemption: true,
-    id: '2',
-  },
-  {
-    createdAt: '2022-12-09T06:34:25.607Z',
-    product: 'Handmade Metal Shoes',
-    points: 16434,
-    image: 'https://loremflickr.com/640/480/technics',
-    is_redemption: false,
-    id: '1',
-  },
-  {
-    createdAt: '2022-12-09T17:02:51.904Z',
-    product: 'Recycled Plastic Tuna',
-    points: 92984,
-    image: 'https://loremflickr.com/640/480/city',
-    is_redemption: false,
-    id: '2',
-  },
-  {
-    createdAt: '2022-12-09T06:34:25.607Z',
-    product: 'Handmade Metal Shoes',
-    points: 16434,
-    image: 'https://loremflickr.com/640/480/technics',
-    is_redemption: true,
-    id: '1',
-  },
-  {
-    createdAt: '2022-12-09T17:02:51.904Z',
-    product: 'Recycled Plastic Tuna',
-    points: 92984,
-    image: 'https://loremflickr.com/640/480/city',
-    is_redemption: false,
-    id: '2',
-  },
-  {
-    createdAt: '2022-12-09T06:34:25.607Z',
-    product: 'Handmade Metal Shoes',
-    points: 16434,
-    image: 'https://loremflickr.com/640/480/technics',
-    is_redemption: false,
-    id: '1',
-  },
-  {
-    createdAt: '2022-12-09T17:02:51.904Z',
-    product: 'Recycled Plastic Tuna',
-    points: 92984,
-    image: 'https://loremflickr.com/640/480/city',
-    is_redemption: false,
-    id: '2',
+    id: '',
   },
 ];
 
@@ -121,18 +50,34 @@ const Separator = styled.View`
 
 export const Home: FunctionComponent<HomeScreenProps> = () => {
   const [listStatus, setListStatus] = useState<ListStatus>(ListStatus.ALL);
+  const [items, setItems] = useState<ProductDetailScreenParams[]>(initialState);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  const products =
+  const productList =
     listStatus === ListStatus.WON
-      ? filterProductsByRedemption(productsMock).nonRedemption
+      ? filterProductsByRedemption(items).nonRedemption
       : listStatus === ListStatus.REDEEMED
-      ? filterProductsByRedemption(productsMock).redemption
-      : productsMock;
+      ? filterProductsByRedemption(items).redemption
+      : items;
+
+  const getProducts = async () => {
+    try {
+      const result = await productService.getProducts();
+      setItems(result);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <HomeWrapper>
-      <Header title="Bienvenido de vuelta!" userName={USER_NAME} />
-      <Body products={products} separator={Separator} />
+      <Header title="Bienvenido de vuelta!" userName={USER_NAME} ammount={updatePoints(items)} />
+      <Body products={productList} separator={Separator} loading={loading} />
       <Footer {...{ listStatus, setListStatus }} />
     </HomeWrapper>
   );
