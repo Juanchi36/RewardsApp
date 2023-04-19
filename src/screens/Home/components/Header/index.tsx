@@ -1,6 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { PointsSummary } from '@components';
+import { updatePoints } from '@helpers';
 import styled from 'styled-components/native';
+
+// TODO: Remove import below
+import { productsMock } from '@screens';
 
 /**
  * Types
@@ -52,8 +56,8 @@ export const Header: FunctionComponent<HeaderWrapperProps> = ({ title, userName 
     <UserNameText>{userName}</UserNameText>
     <SubtitleText>TUS PUNTOS</SubtitleText>
     <PointsSummaryWrapper>
-      {/* TODO: the sum of the points will be implemented in a future PR */}
-      <PointsSummary ammount={10000} month="Diciembre" />
+      {/* TODO: the list of actual products will come from the service that calls the API */}
+      <PointsSummary ammount={updatePoints(productsMock)} month="Diciembre" />
     </PointsSummaryWrapper>
   </HeaderWrapper>
 );

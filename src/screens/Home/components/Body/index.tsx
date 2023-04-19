@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { FlatList, View } from 'react-native';
-import { ProductDetailScreenParams } from 'routing/types';
+import { ProductDetailScreenParams } from '@routing/types';
 import { ProductListItem } from '@components';
 import styled, { DefaultTheme } from 'styled-components/native';
 import { StyledComponent } from 'styled-components';
