@@ -26,6 +26,7 @@ const PointsSummaryWrapper = styled.View`
 `;
 
 const TitleText = styled.Text`
+  font-family: Avenir-Medium;
   color: #020202;
   font-weight: 800;
   font-size: 20px;
@@ -33,6 +34,7 @@ const TitleText = styled.Text`
 `;
 
 const UserNameText = styled.Text`
+  font-family: Avenir-Medium;
   color: #020202;
   font-weight: 400;
   font-size: 14px;
@@ -40,6 +42,7 @@ const UserNameText = styled.Text`
 `;
 
 const SubtitleText = styled.Text`
+  font-family: Avenir-Medium;
   padding-vertical: 20px;
   color: #9b9898;
   font-weight: 800;

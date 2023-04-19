@@ -53,6 +53,7 @@ const ChevronRight = styled.Image`
 `;
 
 const Sign = styled.Text<{ isRedemption: boolean }>`
+  font-family: Avenir-Medium;
   color: ${({ isRedemption }) => (isRedemption ? '#FF0000' : '#00B833')};
   font-weight: 800;
   font-size: 16px;
@@ -61,6 +62,7 @@ const Sign = styled.Text<{ isRedemption: boolean }>`
 `;
 
 const BoldText = styled.Text<{ isProductName: boolean }>`
+  font-family: Avenir-Medium;
   color: #000000;
   font-weight: 800;
   font-size: 16px;
@@ -70,6 +72,7 @@ const BoldText = styled.Text<{ isProductName: boolean }>`
 `;
 
 const DateText = styled.Text`
+  font-family: Avenir-Medium;
   color: #000000;
   font-weight: 400;
   font-size: 12px;

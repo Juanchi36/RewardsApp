@@ -1,3 +1,4 @@
+import { Dimensions } from 'react-native';
 import { ProductDetailScreenParams } from '@routing/types';
 
 export const formatPoints = (num?: number): string =>
@@ -36,3 +37,5 @@ export const filterProductsByRedemption = (
     nonRedemption,
   };
 };
+
+export const isSmallDevice = Dimensions.get('window').height < 700;
