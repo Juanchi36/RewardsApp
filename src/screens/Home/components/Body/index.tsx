@@ -36,7 +36,6 @@ const ListWrapper = styled.View<{ smallDevice: boolean }>`
   padding-vertical: 20px;
   padding-horizontal: 15px;
   background-color: #fff;
-  max-height: 77%;
   border-radius: 10px;
   max-height: ${({ smallDevice }) => (smallDevice ? '65%' : '77%')};
 `;

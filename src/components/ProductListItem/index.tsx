@@ -68,7 +68,6 @@ const BoldText = styled.Text<{ isProductName: boolean }>`
   font-size: 16px;
   font-size: ${({ isProductName }) => (isProductName ? '14px' : '16px')};
   line-height: ${({ isProductName }) => (isProductName ? '19.12px' : '21.86px')};
-  max-width: 90%;
 `;
 
 const DateText = styled.Text`

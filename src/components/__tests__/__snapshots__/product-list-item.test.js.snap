@@ -94,6 +94,7 @@ exports[`productListItem should render a redemtion item 1`] = `
             [
               {
                 "color": "#000000",
+                "fontFamily": "Avenir-Medium",
                 "fontSize": 14,
                 "fontWeight": "800",
                 "lineHeight": 19.12,
@@ -109,6 +110,7 @@ exports[`productListItem should render a redemtion item 1`] = `
             [
               {
                 "color": "#000000",
+                "fontFamily": "Avenir-Medium",
                 "fontSize": 12,
                 "fontWeight": "400",
                 "lineHeight": 16.39,
@@ -135,6 +137,7 @@ exports[`productListItem should render a redemtion item 1`] = `
           [
             {
               "color": "#FF0000",
+              "fontFamily": "Avenir-Medium",
               "fontSize": 16,
               "fontWeight": "800",
               "lineHeight": 21.86,
@@ -152,6 +155,7 @@ exports[`productListItem should render a redemtion item 1`] = `
           [
             {
               "color": "#000000",
+              "fontFamily": "Avenir-Medium",
               "fontSize": 16,
               "fontWeight": "800",
               "lineHeight": 21.86,
@@ -277,6 +281,7 @@ exports[`productListItem should return a snapshot of the component 1`] = `
             [
               {
                 "color": "#000000",
+                "fontFamily": "Avenir-Medium",
                 "fontSize": 14,
                 "fontWeight": "800",
                 "lineHeight": 19.12,
@@ -292,6 +297,7 @@ exports[`productListItem should return a snapshot of the component 1`] = `
             [
               {
                 "color": "#000000",
+                "fontFamily": "Avenir-Medium",
                 "fontSize": 12,
                 "fontWeight": "400",
                 "lineHeight": 16.39,
@@ -318,6 +324,7 @@ exports[`productListItem should return a snapshot of the component 1`] = `
           [
             {
               "color": "#00B833",
+              "fontFamily": "Avenir-Medium",
               "fontSize": 16,
               "fontWeight": "800",
               "lineHeight": 21.86,
@@ -335,6 +342,7 @@ exports[`productListItem should return a snapshot of the component 1`] = `
           [
             {
               "color": "#000000",
+              "fontFamily": "Avenir-Medium",
               "fontSize": 16,
               "fontWeight": "800",
               "lineHeight": 21.86,
