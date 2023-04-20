@@ -56,6 +56,7 @@ const SubtitleText = styled.Text`
   font-size: 14px;
   line-height: 19.12px;
   margin-bottom: 19px;
+  margin-top: 13px;
 `;
 
 const InfoText = styled.Text`
@@ -106,7 +107,7 @@ export const ProductDetail: FunctionComponent<ProductDetailScreenProps> = ({
 
   return (
     <>
-      <HeaderWrapper>
+      <HeaderWrapper testID="product-detail-screen">
         <TitleText>{product}</TitleText>
       </HeaderWrapper>
       <ContentWrapper>

@@ -1,0 +1,326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`productDetail should return a snapshot of the screen 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      forwardedRef={[Function]}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backgroundColor="rgb(255, 255, 255)"
+        color="rgb(0, 122, 255)"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="MockedScreen"
+        titleColor="rgb(28, 28, 30)"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "rgb(242, 242, 242)",
+              },
+              undefined,
+            ]
+          }
+        >
+          <RCTSafeAreaView
+            style={
+              [
+                {
+                  "backgroundColor": "#cfd6ff",
+                  "height": 150,
+                },
+              ]
+            }
+            testID="product-detail-screen"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#000000",
+                    "fontFamily": "Avenir-Medium",
+                    "fontSize": 24,
+                    "fontWeight": "800",
+                    "left": 20,
+                    "lineHeight": 26,
+                    "position": "absolute",
+                    "top": 110,
+                  },
+                ]
+              }
+            >
+              A.PRODUCT
+            </Text>
+          </RCTSafeAreaView>
+          <View
+            style={
+              [
+                {
+                  "paddingHorizontal": 20,
+                },
+              ]
+            }
+          >
+            <View
+              smallDevice={false}
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderRadius": 10,
+                    "elevation": 1,
+                    "height": 350,
+                    "justifyContent": "center",
+                    "marginVertical": 19,
+                    "shadowOffset": {
+                      "height": 5,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.5,
+                    "shadowRadius": 20,
+                  },
+                ]
+              }
+            >
+              <ActivityIndicator
+                style={
+                  [
+                    {
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "marginTop": "100%",
+                    },
+                  ]
+                }
+              />
+              <Image
+                onLoad={[Function]}
+                resizeMode="cover"
+                source={
+                  {
+                    "uri": "AN.URL",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "borderRadius": 10,
+                      "height": "100%",
+                      "width": "100%",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#9b9898",
+                    "fontFamily": "Avenir-Medium",
+                    "fontSize": 14,
+                    "fontWeight": "800",
+                    "lineHeight": 19.12,
+                    "marginBottom": 19,
+                    "marginTop": 13,
+                  },
+                ]
+              }
+            >
+              Detalles del producto:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#000000",
+                    "fontFamily": "Avenir-Medium",
+                    "fontSize": 16,
+                    "fontWeight": "800",
+                    "lineHeight": 21.86,
+                    "marginBottom": 19,
+                  },
+                ]
+              }
+            >
+              Comprado el Invalid Date
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#9b9898",
+                    "fontFamily": "Avenir-Medium",
+                    "fontSize": 14,
+                    "fontWeight": "800",
+                    "lineHeight": 19.12,
+                    "marginBottom": 19,
+                    "marginTop": 13,
+                  },
+                ]
+              }
+            >
+              Con esta compra acumulaste:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#000000",
+                    "fontFamily": "Avenir-Medium",
+                    "fontSize": 24,
+                    "fontWeight": "800",
+                    "lineHeight": 32.78,
+                    "marginTop": 13,
+                  },
+                ]
+              }
+            >
+              100 puntos
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "bottom": "4.5%",
+                  "left": "0%",
+                  "paddingHorizontal": 20,
+                  "position": "absolute",
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#334ffa",
+                  "borderRadius": 10,
+                  "height": 50,
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "width": "100%",
+                }
+              }
+              testID="primary-button"
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#ffffff",
+                      "fontFamily": "Avenir-Medium",
+                      "fontSize": 16,
+                      "fontWeight": "800",
+                      "lineHeight": 17.39,
+                    },
+                  ]
+                }
+              >
+                Aceptar
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

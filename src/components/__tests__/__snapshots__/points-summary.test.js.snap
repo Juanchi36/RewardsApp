@@ -26,6 +26,7 @@ exports[`pointsSummary should return a snapshot of the component 1`] = `
       [
         {
           "color": "#ffffff",
+          "fontFamily": "Avenir-Medium",
           "fontSize": 16,
           "fontWeight": "800",
           "left": 18,
@@ -43,6 +44,7 @@ exports[`pointsSummary should return a snapshot of the component 1`] = `
       [
         {
           "color": "#ffffff",
+          "fontFamily": "Avenir-Medium",
           "fontSize": 32,
           "fontWeight": "800",
           "lineHeight": 43.71,

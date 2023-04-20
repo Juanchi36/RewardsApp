@@ -75,7 +75,7 @@ export const Home: FunctionComponent<HomeScreenProps> = () => {
   }, []);
 
   return (
-    <HomeWrapper>
+    <HomeWrapper testID="home-screen">
       <Header title="Bienvenido de vuelta!" userName={USER_NAME} ammount={updatePoints(items)} />
       <Body products={productList} separator={Separator} loading={loading} />
       <Footer {...{ listStatus, setListStatus }} />

@@ -47,9 +47,10 @@ exports[`button should return a blue button 1`] = `
       [
         {
           "color": "#ffffff",
-          "fontSize": 12,
+          "fontFamily": "Avenir-Medium",
+          "fontSize": 16,
           "fontWeight": "800",
-          "lineHeight": 16.39,
+          "lineHeight": 17.39,
         },
       ]
     }
@@ -106,9 +107,10 @@ exports[`button should return a snapshot of the component 1`] = `
       [
         {
           "color": "#ffffff",
-          "fontSize": 12,
+          "fontFamily": "Avenir-Medium",
+          "fontSize": 16,
           "fontWeight": "800",
-          "lineHeight": 16.39,
+          "lineHeight": 17.39,
         },
       ]
     }
